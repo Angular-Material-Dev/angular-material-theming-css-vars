@@ -1,11 +1,33 @@
 <mat-form-field>
-  <mat-label>Change Seed Color</mat-label>
+  <mat-label>Primary Color</mat-label>
   <input
     type="text"
     matInput
-    placeholder="#XXXXXX"
+    [defaultValue]="'#005cbb'"
     (change)="generateDynamicTheme($event)"
   />
 </mat-form-field>
-
+<div class="gap"></div>
+<mat-form-field>
+  <mat-label>Flat Button Font Size</mat-label>
+  <input
+    type="number"
+    matInput
+    [defaultValue]="14"
+    (change)="changeFlatButtonFontSize($event)"
+  />
+</mat-form-field>
+<br />
 <button mat-flat-button>Flat Button</button>
+<br />
+<br />
+<mat-form-field>
+  <mat-label>Heading Font Size</mat-label>
+  <input
+    type="number"
+    matInput
+    [defaultValue]="'56.992'"
+    (change)="changeHeadingFontSize($event)"
+  />
+</mat-form-field>
+<h1>Heading</h1>

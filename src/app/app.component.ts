@@ -63,4 +63,25 @@ export class AppComponent {
       }
     }
   }
+
+  changeFlatButtonFontSize(ev: Event) {
+    const size = (ev.target as HTMLInputElement).value ?? '14';
+
+    const targetElement = document.documentElement;
+    targetElement.style.setProperty('--sys-label-large-size', size + 'px');
+  }
+
+  changeHeadingFontSize(ev: Event) {
+    const size = (ev.target as HTMLInputElement).value ?? '56.992';
+
+    const targetElement = document.documentElement;
+    targetElement.style.setProperty('--sys-display-large-size', size + 'px');
+    targetElement.style.setProperty('--sys-display-large-line-height', '1.25');
+
+    /* <h1> (and display-large) uses --sys-display-large, hence we also need to update that variable to see the changes */
+    targetElement.style.setProperty(
+      '--sys-display-large',
+      '400 var(--sys-display-large-size) / var(--sys-display-large-line-height) Roboto, sans-serif'
+    );
+  }
 }
